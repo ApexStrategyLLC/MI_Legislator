@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension type="component" version="6.0" method="upgrade" client="administrator">
+<extension type="component" version="6.0" method="upgrade">
     <name>com_milegislator</name>
     <author>MI Legislature Lookup</author>
     <creationDate>2024-09-01</creationDate>
@@ -8,15 +8,20 @@
     <version>1.0.0</version>
     <description>MI Legislator Lookup with district search, party balance, and AJAX endpoints.</description>
 
-    <scriptfile>src/Extension/MilegislatorComponent.php</scriptfile>
+    <scriptfile>administrator/components/com_milegislator/src/Extension/MilegislatorComponent.php</scriptfile>
+
+    <files folder="components/com_milegislator">
+        <filename>milegislator.php</filename>
+        <folder>src</folder>
+        <folder>language</folder>
+    </files>
 
     <administration>
-        <access>access.xml</access>
         <menu link="index.php?option=com_milegislator" view="legislators">MI Legislators</menu>
         <submenu>
             <menu link="index.php?option=com_milegislator" view="legislators">Legislators</menu>
         </submenu>
-        <files>
+        <files folder="administrator/components/com_milegislator">
             <filename>access.xml</filename>
             <filename>milegislator.php</filename>
             <folder>src</folder>
@@ -24,8 +29,8 @@
             <folder>sql</folder>
         </files>
         <languages>
-            <language tag="en-GB">language/en-GB/en-GB.com_milegislator.ini</language>
-            <language tag="en-GB">language/en-GB/en-GB.com_milegislator.sys.ini</language>
+            <language tag="en-GB">administrator/components/com_milegislator/language/en-GB/en-GB.com_milegislator.ini</language>
+            <language tag="en-GB">administrator/components/com_milegislator/language/en-GB/en-GB.com_milegislator.sys.ini</language>
         </languages>
         <config>
             <fields name="params">
@@ -40,29 +45,25 @@
     </administration>
 
     <site>
-        <files folder="../../components/com_milegislator">
-            <filename>milegislator.php</filename>
-            <folder>src</folder>
-            <folder>language</folder>
-        </files>
         <languages>
-            <language tag="en-GB">../../components/com_milegislator/language/en-GB/en-GB.com_milegislator.ini</language>
+            <language tag="en-GB">components/com_milegislator/language/en-GB/en-GB.com_milegislator.ini</language>
         </languages>
     </site>
 
     <install>
         <sql>
-            <file driver="mysql" charset="utf8mb4">sql/install.mysql.utf8.sql</file>
+            <file driver="mysql" charset="utf8mb4">administrator/components/com_milegislator/sql/install.mysql.utf8.sql</file>
         </sql>
     </install>
     <uninstall>
         <sql>
-            <file driver="mysql" charset="utf8mb4">sql/uninstall.mysql.utf8.sql</file>
+            <file driver="mysql" charset="utf8mb4">administrator/components/com_milegislator/sql/uninstall.mysql.utf8.sql</file>
         </sql>
     </uninstall>
 
     <languages>
-        <language tag="en-GB">language/en-GB/en-GB.com_milegislator.ini</language>
-        <language tag="en-GB">language/en-GB/en-GB.com_milegislator.sys.ini</language>
+        <language tag="en-GB">administrator/components/com_milegislator/language/en-GB/en-GB.com_milegislator.ini</language>
+        <language tag="en-GB">administrator/components/com_milegislator/language/en-GB/en-GB.com_milegislator.sys.ini</language>
+        <language tag="en-GB">components/com_milegislator/language/en-GB/en-GB.com_milegislator.ini</language>
     </languages>
 </extension>

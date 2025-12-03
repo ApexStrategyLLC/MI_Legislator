@@ -11,8 +11,8 @@ Joomla! 6.0.1 component (`com_milegislator`) for Michigan legislator lookup and 
 - ACL-ready administrator menu and language strings for English (en-GB)
 
 ## Installation
-1. Copy `administrator/components/com_milegislator` and `components/com_milegislator` into your Joomla! root.
-2. Install the component from the Extension Manager or run the installer manifest directly.
+1. Place `com_milegislator.xml` at the root of your install package alongside the `administrator/components/com_milegislator` and `components/com_milegislator` folders.
+2. Zip those three paths together (manifest + admin folder + site folder) and upload the archive in the Extension Manager. Joomla will automatically copy the manifest into the component directory during installation.
 3. On install, the SQL script creates `#__milegislator_legislators` and `#__milegislator_citydistricts` with all data preloaded.
 
 ## AJAX API
